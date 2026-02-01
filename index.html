@@ -76,6 +76,11 @@
     .nav-logo {
       height: 28px;
       opacity: 0.95;
+      transition: filter 0.3s ease;
+    }
+
+    .nav-logo:hover {
+      filter: sepia(1) saturate(20) brightness(0.85) hue-rotate(5deg);
     }
 
     .nav-links {
@@ -315,11 +320,12 @@
     .logos-grid img {
       height: 36px;
       opacity: 0.45;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .logos-grid img:hover {
-      opacity: 0.8;
+      opacity: 1;
+      filter: sepia(1) saturate(20) brightness(0.85) hue-rotate(5deg);
     }
 
     /* =========================================
