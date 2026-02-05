@@ -73,14 +73,20 @@
       transition: all 0.3s ease;
     }
 
+    .nav-logo-link {
+      display: flex;
+      align-items: center;
+    }
+
     .nav-logo {
       height: 28px;
       opacity: 0.95;
       transition: filter 0.3s ease;
+      cursor: pointer;
     }
 
     .nav-logo:hover {
-      filter: sepia(1) saturate(10) brightness(0.9) hue-rotate(-10deg);
+      filter: sepia(1) saturate(50) brightness(0.95) hue-rotate(-20deg);
     }
 
     .nav-links {
@@ -910,7 +916,9 @@
 
   <!-- ========== NAVIGATION ========== -->
   <nav>
-    <img src="images/NEIL-JACOBS-LOGO-white.png" alt="Neil Jacobs" class="nav-logo">
+    <a href="#" class="nav-logo-link">
+      <img src="images/NEIL-JACOBS-LOGO-white.png" alt="Neil Jacobs" class="nav-logo">
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
