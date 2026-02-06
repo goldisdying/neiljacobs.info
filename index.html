@@ -1,488 +1,1246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>awkwardgringo - Learn Spanish to Impress</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-        }
-        .category-card {
-            transition: transform 0.2s;
-        }
-        .category-card:hover {
-            transform: scale(1.05);
-        }
-        .category-card:active {
-            transform: scale(0.98);
-        }
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neil Jacobs — Brand & Marketing Strategist</title>
+  <meta name="description" content="Neil Jacobs is a leading brand and marketing strategist, educator, and content creator in the Bitcoin industry.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #161616;
+      --text-primary: #f0ede6;
+      --text-secondary: #9a9690;
+      --accent: #e8910c;
+      --accent-glow: rgba(232, 145, 12, 0.15);
+      --accent-hover: #f5a623;
+      --border: rgba(255, 255, 255, 0.06);
+      --font-display: 'DM Sans', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .nav-logo-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo {
+      height: 28px;
+      opacity: 0.95;
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-logo:hover {
+      filter: brightness(0) saturate(100%) invert(56%) sepia(93%) saturate(2000%) hue-rotate(8deg) brightness(103%) contrast(101%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.5rem;
+      background: var(--accent);
+      color: var(--bg-primary);
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    /* Mobile Nav Toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 70%;
+      height: 80%;
+      background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title .highlight {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      background: var(--accent);
+      color: var(--bg-primary);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 0 40px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 440px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: linear-gradient(180deg, transparent 60%, var(--bg-primary) 100%);
+      pointer-events: none;
+    }
+
+    /* =========================================
+       COMPANIES / LOGOS
+    ========================================= */
+    .logos-section {
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-secondary);
+    }
+
+    .logos-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logos-label {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .logos-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+
+    .logos-grid img {
+      height: 36px;
+      opacity: 0.45;
+      transition: all 0.3s ease;
+    }
+
+    .logos-grid img:hover {
+      opacity: 1;
+      filter: brightness(0) saturate(100%) invert(56%) sepia(93%) saturate(2000%) hue-rotate(8deg) brightness(103%) contrast(101%);
+    }
+
+    /* =========================================
+       SECTIONS COMMON
+    ========================================= */
+    .section {
+      padding: 7rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-description {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       ABOUT
+    ========================================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat {
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    a.stat {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a.stat:hover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+      transform: translateY(-2px);
+    }
+
+    .stat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .stat-icon {
+      width: 22px;
+      height: 22px;
+      fill: var(--text-secondary);
+      flex-shrink: 0;
+      transition: fill 0.3s ease;
+    }
+
+    a.stat:hover .stat-icon {
+      fill: var(--accent);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    /* =========================================
+       PROJECTS
+    ========================================= */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .project-card:hover {
+      border-color: rgba(232, 145, 12, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-tag {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 0.35rem 0.8rem;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+
+    .project-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-description {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-link {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.3s ease;
+    }
+
+    .project-link:hover {
+      gap: 0.85rem;
+    }
+
+    .project-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* =========================================
+       SPEAKING
+    ========================================= */
+    .speaking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .speaking-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .speaking-card:hover {
+      border-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .speaking-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .speaking-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .speaking-card:hover .speaking-thumb img {
+      transform: scale(1.05);
+    }
+
+    .speaking-thumb .play-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .speaking-card:hover .play-icon {
+      opacity: 1;
+    }
+
+    .play-icon svg {
+      width: 48px;
+      height: 48px;
+      fill: white;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+
+    .speaking-info {
+      padding: 1.5rem;
+    }
+
+    .speaking-event {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .speaking-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .speaking-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+    .contact-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .contact-text {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      border-color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-secondary);
+      transition: fill 0.3s ease;
+    }
+
+    .social-link:hover svg {
+      fill: var(--text-primary);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.3s ease;
+      width: 100%;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.5;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .contact-form button {
+      align-self: flex-start;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    footer {
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-copy {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* =========================================
+       ANIMATIONS
+    ========================================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      .hero-label {
+        justify-content: center;
+      }
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-image img {
+        max-width: 300px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-image {
+        order: -1;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .speaking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .logos-grid {
+        gap: 2rem;
+      }
+
+      .logos-grid img {
+        height: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen text-white">
+<body>
 
-    <!-- Main Container -->
-    <div id="app"></div>
+  <!-- ========== NAVIGATION ========== -->
+  <nav>
+    <a href="#" class="nav-logo-link">
+      <img src="images/NEIL-JACOBS-LOGO-white.png" alt="Neil Jacobs" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
-    <!-- Adult Content Modal -->
-    <div id="adultModal" class="modal-overlay">
-        <div class="bg-gray-900 rounded-2xl p-8 max-w-lg mx-4 border-2 border-red-500 shadow-2xl">
-            <div class="text-center mb-6">
-                <div class="text-6xl mb-4">⚠️</div>
-                <h2 class="text-3xl font-black text-red-500 mb-4">ADULT CONTENT WARNING</h2>
-            </div>
-            
-            <div class="bg-gray-800 rounded-lg p-6 mb-6 text-sm text-gray-300 space-y-3">
-                <p class="font-semibold text-white">You must be at least 18 years old (or the legal age of majority in your jurisdiction) to access this content.</p>
-                
-                <p class="font-semibold text-white">By clicking "I Agree" below, you confirm that:</p>
-                
-                <ul class="space-y-2 ml-4">
-                    <li>• You are 18 years of age or older</li>
-                    <li>• You understand this section contains explicit adult language</li>
-                    <li>• You are voluntarily choosing to access this content</li>
-                    <li>• This content is legal to view in your location</li>
-                    <li>• You will not hold awkwardgringo.com liable for any offense</li>
-                </ul>
-                
-                <p class="mt-4 text-xs text-gray-400">This content is provided for educational and informational purposes only. Awkwardgringo.com does not endorse or encourage any specific behavior.</p>
-            </div>
-            
-            <label class="flex items-center gap-3 mb-6 cursor-pointer">
-                <input type="checkbox" id="adultConsent" class="w-5 h-5 cursor-pointer">
-                <span class="text-white font-semibold">I am 18+ and agree to view adult content</span>
-            </label>
-            
-            <div class="flex gap-4">
-                <button onclick="closeAdultModal()" 
-                        class="flex-1 bg-gray-700 px-6 py-3 rounded-xl font-semibold hover:bg-gray-600 transition">
-                    Cancel
-                </button>
-                <button onclick="acceptAdultContent()" 
-                        id="agreeButton"
-                        class="flex-1 bg-red-500 px-6 py-3 rounded-xl font-semibold hover:bg-red-600 transition opacity-50 cursor-not-allowed"
-                        disabled>
-                    I Agree
-                </button>
-            </div>
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-label">Bitcoin Advocate & Brand Promoter</div>
+        <h1 class="hero-title">
+          Building brands in the <span class="highlight">Bitcoin</span> economy.
+        </h1>
+        <p class="hero-description">
+          Brand and marketing strategist — growing companies in the Bitcoin industry.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">Get in Touch</a>
+          <a href="#speaking" class="btn-secondary">Watch Me Speak</a>
         </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/Neil-jacobs-live.jpg" alt="Neil Jacobs">
+      </div>
     </div>
+  </section>
 
-    <!-- PapaParse for CSV parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    
-    <script>
-        // Global state
-        let allPhrases = [];
-        let currentCategory = null;
-        let currentBlock = 1;
-        let currentPhraseIndex = 0;
-        let categoryPhrases = [];
+  <!-- ========== COMPANY LOGOS ========== -->
+  <section class="logos-section">
+    <div class="logos-inner">
+      <div class="logos-label">Companies I've Worked With</div>
+      <div class="logos-grid">
+        <img src="images/swan-white.png" alt="Swan Bitcoin">
+        <img src="images/strategy-white.png" alt="Strategy">
+        <img src="images/bitcoin-conference-logo.png" alt="Bitcoin 2025">
+        <img src="images/abundantmines-white.png" alt="Abundant Mines">
+        <img src="images/bitblockboom-white.png" alt="BitBlockBoom">
+        <img src="images/unconfiscatable-white.png" alt="Unconfiscatable">
+        <img src="images/fomo21-white.png" alt="FOMO21">
+      </div>
+    </div>
+  </section>
 
-        // Category configurations
-        const categories = {
-            'first-date': {
-                name: 'First Date',
-                icon: '❤️',
-                color: 'bg-pink-500'
-            },
-            'compliments': {
-                name: 'Compliments',
-                icon: '💬',
-                color: 'bg-purple-500'
-            },
-            'food-drinks': {
-                name: 'Food & Drinks',
-                icon: '🍽️',
-                color: 'bg-orange-500'
-            },
-            'meeting-family': {
-                name: 'Meeting Family',
-                icon: '👨‍👩‍👧‍👦',
-                color: 'bg-blue-500'
-            },
-            'spicy': {
-                name: 'Spicy 🌶️',
-                icon: '🔥',
-                color: 'bg-red-500'
-            },
-            'adult-rated': {
-                name: 'Adult Rated 🔞',
-                icon: '💋',
-                color: 'bg-pink-600'
-            },
-            'basics': {
-                name: 'Learn Basics',
-                icon: '📚',
-                color: 'bg-green-500'
-            }
-        };
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-label">About</div>
+      <h2 class="section-title">The story so far</h2>
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p>
+            Neil Jacobs helps Bitcoin companies amplify their brand, build trust, and grow their audience. He is a brand and marketing strategist and educator in the Bitcoin industry, with a Big Four CPA background and more than 155,000 social media followers. He has driven brand awareness and revenue growth for a wide range of Bitcoin focused companies, from financial services firms to mining operations.
+          </p>
+          <p>
+            He cofounded FOMO21.com, a Bitcoin themed e commerce brand that has served customers in over 70 countries. Neil's Bitcoin journey began more than a decade ago and he has since become a vocal advocate, hosting podcasts, serving on the boards of nonprofits advancing Bitcoin, and speaking at major industry conferences.
+          </p>
+          <p>
+            By combining marketing strategy with financial expertise, Neil partners with Bitcoin companies to strengthen their brands and support Bitcoin's global adoption.
+          </p>
+          <div class="about-stats">
+            <a href="https://x.com/NeilJacobs" target="_blank" class="stat">
+              <div class="stat-header">
+                <svg class="stat-icon" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <div class="stat-number">108K</div>
+              </div>
+              <div class="stat-label">Followers</div>
+            </a>
+            <a href="https://www.instagram.com/therealneiljacobs" target="_blank" class="stat">
+              <div class="stat-header">
+                <svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                <div class="stat-number">31K</div>
+              </div>
+              <div class="stat-label">Followers</div>
+            </a>
+            <a href="https://www.linkedin.com/in/neiljacobs/" target="_blank" class="stat">
+              <div class="stat-header">
+                <svg class="stat-icon" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <div class="stat-number">11K</div>
+              </div>
+              <div class="stat-label">Followers</div>
+            </a>
+            <a href="https://primal.net/neil" target="_blank" class="stat">
+              <div class="stat-header">
+                <img class="stat-icon" src="images/nostr-logo.png" alt="Nostr" style="filter: brightness(0.7);">
+                <div class="stat-number">8K</div>
+              </div>
+              <div class="stat-label">Followers</div>
+            </a>
+          </div>
+        </div>
+        <div class="about-image fade-in fade-in-delay-2">
+          <img src="images/neil-panel-bw.jpg" alt="Neil Jacobs speaking on a panel">
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Adult content consent handling
-        function checkAdultConsent() {
-            return localStorage.getItem('adultConsent') === 'true';
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects" style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="section-inner">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">What I'm building</h2>
+      <p class="section-description">Ventures focused on growing the Bitcoin ecosystem.</p>
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <div class="project-tag">Conference Directory</div>
+          <h3 class="project-name">Proof of Conference</h3>
+          <p class="project-description">
+            The comprehensive Bitcoin conference directory. Find events, discover speakers, and never miss a conference. Helping Bitcoiners connect in person around the world.
+          </p>
+          <a href="https://proofofconference.com" target="_blank" class="project-link">
+            Visit Site
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 13L13 3M13 3H5M13 3v8"/>
+            </svg>
+          </a>
+        </div>
+        <div class="project-card fade-in fade-in-delay-1">
+          <div class="project-tag">E-Commerce</div>
+          <h3 class="project-name">FOMO21</h3>
+          <p class="project-description">
+            Bitcoin-themed apparel and merchandise for the community. Serving customers in 67 countries and counting. Wear your conviction.
+          </p>
+          <a href="https://fomo21.com" target="_blank" class="project-link">
+            Visit Store
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 13L13 3M13 3H5M13 3v8"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SPEAKING ========== -->
+  <section class="section" id="speaking">
+    <div class="section-inner">
+      <div class="section-label">Public Speaking</div>
+      <h2 class="section-title">In front of the mic</h2>
+      <p class="section-description">Select appearances at Bitcoin conferences and events.</p>
+      <div class="speaking-grid">
+
+        <a href="https://www.youtube.com/watch?v=n14BEAc7wV8" target="_blank" class="speaking-card fade-in">
+          <div class="speaking-thumb">
+            <img src="https://img.youtube.com/vi/n14BEAc7wV8/maxresdefault.jpg" alt="Pacific Bitcoin 2022">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="speaking-info">
+            <div class="speaking-event">Pacific Bitcoin 2022</div>
+            <h3 class="speaking-title">The Power of Memes</h3>
+            <p class="speaking-desc">Panel with Lyn Alden, American HODL, and Neil Jacobs discussing meme origins, cultural impact, and how the meme is becoming the message.</p>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/live/6xHG3yeT_m4?t=14439s" target="_blank" class="speaking-card fade-in fade-in-delay-1">
+          <div class="speaking-thumb">
+            <img src="images/bitcoin-2023-thumbnail.jpg" alt="Bitcoin 2023">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="speaking-info">
+            <div class="speaking-event">Bitcoin 2023</div>
+            <h3 class="speaking-title">Bringing Bitcoin to the Masses</h3>
+            <p class="speaking-desc">Neil joins the Bitcoin 2023 Conference news desk and shares his thoughts on what's needed for mainstream Bitcoin adoption and whether true hyperbitcoinization is possible.</p>
+          </div>
+        </a>
+
+        <a href="https://youtu.be/NVF2qSzV3SU?si=noMi6LermAGUQpWn&t=63" target="_blank" class="speaking-card fade-in fade-in-delay-2">
+          <div class="speaking-thumb">
+            <img src="https://img.youtube.com/vi/NVF2qSzV3SU/maxresdefault.jpg" alt="BitcoinDay Miami 2024">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="speaking-info">
+            <div class="speaking-event">BitcoinDay Miami 2024</div>
+            <h3 class="speaking-title">Thriving in the Bitcoin Economy</h3>
+            <p class="speaking-desc">Expert insights on accepting Bitcoin payments, scaling with Lightning, improving UX, and securing funding in a decentralized world.</p>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=e8OnDdyIs7A" target="_blank" class="speaking-card fade-in fade-in-delay-3">
+          <div class="speaking-thumb">
+            <img src="https://img.youtube.com/vi/e8OnDdyIs7A/maxresdefault.jpg" alt="Bitcoin 2024 Interview">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="speaking-info">
+            <div class="speaking-event">Bitcoin 2024</div>
+            <h3 class="speaking-title">What is Money?</h3>
+            <p class="speaking-desc">Neil speaks on why many stay trapped in the fiat matrix and how to start the conversation about value, time, inflation, and the case for Bitcoin.</p>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=rmqItQhiL88" target="_blank" class="speaking-card fade-in fade-in-delay-4">
+          <div class="speaking-thumb">
+            <img src="https://img.youtube.com/vi/rmqItQhiL88/maxresdefault.jpg" alt="Bitcoin 2025">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="speaking-info">
+            <div class="speaking-event">Bitcoin 2025</div>
+            <h3 class="speaking-title">Marketing Bitcoin to the Masses</h3>
+            <p class="speaking-desc">Neil Jacobs, Brian De Mint, and Anil Patel join Susie Violet Ward to explore how storytelling, simplicity, and authenticity drive Bitcoin adoption.</p>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=I0MLVWPLlX4" target="_blank" class="speaking-card fade-in fade-in-delay-5">
+          <div class="speaking-thumb">
+            <img src="images/btc-prague-2025-thumbnail.jpg" alt="BTC Prague 2025">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="speaking-info">
+            <div class="speaking-event">BTC Prague 2025</div>
+            <h3 class="speaking-title">Why Bitcoin, Not Crypto: Lessons from 2017</h3>
+            <p class="speaking-desc">This panel, moderated by Dušan Matuška, brings together Knut Svanholm, Prince Filip Karadjordjevic, Richard Byworth, and Neil Jacobs to reflect on the lessons of the 2017 crypto boom. Together, they explore why so many were misled, how to avoid repeating the same mistakes, and why Bitcoin remains fundamentally different from the broader crypto space—both then and now.</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact-section" id="contact">
+    <div class="section-inner">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's talk</h2>
+      <div class="contact-grid">
+        <div class="fade-in">
+          <p class="contact-text">
+            Interested in working together, booking me for a speaking engagement, or just want to connect? Reach out through the form or find me on social media.
+          </p>
+          <div class="social-links">
+            <a href="https://x.com/NeilJacobs" target="_blank" class="social-link" aria-label="X / Twitter">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/neiljacobs/" target="_blank" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/therealneiljacobs" target="_blank" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://primal.net/neil" target="_blank" class="social-link" aria-label="Nostr">
+              <img src="images/nostr-logo.png" alt="Nostr" style="width: 20px; height: 20px; opacity: 0.6; transition: opacity 0.3s ease;">
+            </a>
+          </div>
+        </div>
+        <form class="contact-form fade-in fade-in-delay-2" id="contactForm">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <input type="text" name="subject" placeholder="Subject">
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Neil Jacobs. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://x.com/NeilJacobs" target="_blank">X</a>
+        <a href="https://www.linkedin.com/in/neiljacobs/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/therealneiljacobs" target="_blank">Instagram</a>
+        <a href="https://linktr.ee/neil.jacobs" target="_blank">Linktree</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close nav on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Scroll-triggered fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-        function showAdultModal() {
-            document.getElementById('adultModal').classList.add('active');
-            document.getElementById('adultConsent').checked = false;
-            document.getElementById('agreeButton').disabled = true;
-            document.getElementById('agreeButton').classList.add('opacity-50', 'cursor-not-allowed');
-        }
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        function closeAdultModal() {
-            document.getElementById('adultModal').classList.remove('active');
-        }
+    // Simple contact form handler (placeholder — connect to your backend later)
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thanks for reaching out! This form will be connected once the site is fully deployed.');
+    });
+  </script>
 
-        function acceptAdultContent() {
-            if (document.getElementById('adultConsent').checked) {
-                localStorage.setItem('adultConsent', 'true');
-                closeAdultModal();
-                // Proceed to show the adult-rated category
-                selectCategoryDirect('adult-rated');
-            }
-        }
-
-        // Enable/disable agree button based on checkbox
-        document.addEventListener('DOMContentLoaded', function() {
-            const checkbox = document.getElementById('adultConsent');
-            const agreeButton = document.getElementById('agreeButton');
-            
-            if (checkbox) {
-                checkbox.addEventListener('change', function() {
-                    if (this.checked) {
-                        agreeButton.disabled = false;
-                        agreeButton.classList.remove('opacity-50', 'cursor-not-allowed');
-                    } else {
-                        agreeButton.disabled = true;
-                        agreeButton.classList.add('opacity-50', 'cursor-not-allowed');
-                    }
-                });
-            }
-        });
-
-        // Load CSV data
-        async function loadPhrases() {
-            try {
-                const response = await fetch('awkwardgringo - directory.csv');
-                const csvText = await response.text();
-                
-                Papa.parse(csvText, {
-                    header: true,
-                    skipEmptyLines: true,
-                    complete: function(results) {
-                        allPhrases = results.data;
-                        console.log(`Loaded ${allPhrases.length} phrases`);
-                        renderHome();
-                    },
-                    error: function(error) {
-                        console.error('Error parsing CSV:', error);
-                        document.getElementById('app').innerHTML = `
-                            <div class="p-6 text-center">
-                                <h2 class="text-2xl font-bold text-red-500 mb-4">Error Loading Phrases</h2>
-                                <p class="text-gray-300">Make sure 'awkwardgringo - directory.csv' is in the same folder as this HTML file.</p>
-                            </div>
-                        `;
-                    }
-                });
-            } catch (error) {
-                console.error('Error loading CSV:', error);
-                document.getElementById('app').innerHTML = `
-                    <div class="p-6 text-center">
-                        <h2 class="text-2xl font-bold text-red-500 mb-4">Error Loading File</h2>
-                        <p class="text-gray-300">Could not load phrases. Make sure the CSV file exists.</p>
-                    </div>
-                `;
-            }
-        }
-
-        // Render home screen
-        function renderHome() {
-            const app = document.getElementById('app');
-            app.innerHTML = `
-                <!-- Header -->
-                <div class="bg-gradient-to-r from-yellow-500 to-orange-500 p-8 text-center">
-                    <h1 class="text-5xl font-black text-gray-900 mb-2" style="letter-spacing: -0.02em;">awkwardgringo</h1>
-                    <p class="text-gray-800 text-xl font-semibold">Learn Spanish to impress 💃</p>
-                </div>
-
-                <!-- Hero Section -->
-                <div class="p-6 max-w-md mx-auto">
-                    <div class="bg-gradient-to-br from-pink-600 to-purple-600 rounded-2xl p-8 mb-8 text-center shadow-xl">
-                        <h2 class="text-3xl font-black mb-3" style="letter-spacing: -0.01em;">Stop Being Awkward</h2>
-                        <p class="text-gray-100 mb-4 font-medium text-lg">
-                            Master the phrases that actually matter when dating Latinas
-                        </p>
-                        <div class="bg-white/20 backdrop-blur rounded-lg p-4">
-                            <p class="text-sm text-gray-100">
-                                💡 Real scenarios, authentic phrases, zero cringe
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Categories -->
-                    <h3 class="text-2xl font-black mb-4 text-gray-100" style="letter-spacing: -0.01em;">Choose Your Scenario</h3>
-                    
-                    <div class="space-y-3">
-                        ${Object.keys(categories).map(catKey => {
-                            const cat = categories[catKey];
-                            return `
-                                <button onclick="selectCategory('${catKey}')" 
-                                        class="category-card w-full ${cat.color} rounded-xl p-5 flex items-center justify-between shadow-lg">
-                                    <div class="flex items-center gap-4">
-                                        <div class="bg-white/20 p-3 rounded-lg">
-                                            <span class="text-2xl">${cat.icon}</span>
-                                        </div>
-                                        <span class="font-semibold text-lg">${cat.name}</span>
-                                    </div>
-                                    <span class="text-2xl">›</span>
-                                </button>
-                            `;
-                        }).join('')}
-                    </div>
-
-                    <!-- Footer CTA -->
-                    <div class="mt-12 bg-gray-800 rounded-xl p-6 text-center">
-                        <p class="text-gray-400 mb-3">Ready to level up your game?</p>
-                        <p class="text-2xl mb-4">🔥 100% Free to Use 🔥</p>
-                        <p class="text-sm text-gray-500 mb-2">
-                            No sign-up required. Just start learning.
-                        </p>
-                        <p class="text-xs text-gray-600 mt-4 border-t border-gray-700 pt-4">
-                            ⚠️ This site contains adult content. 18+ only.
-                        </p>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Select category and show block selection
-        function selectCategory(categoryKey) {
-            // Check if adult-rated and no consent given
-            if (categoryKey === 'adult-rated' && !checkAdultConsent()) {
-                showAdultModal();
-                return;
-            }
-            
-            selectCategoryDirect(categoryKey);
-        }
-
-        // Direct category selection (bypasses consent check)
-        function selectCategoryDirect(categoryKey) {
-            currentCategory = categoryKey;
-            const phrases = allPhrases.filter(p => p.category === categoryKey);
-            
-            // Get unique blocks
-            const blocks = [...new Set(phrases.map(p => parseInt(p.block)))].sort();
-            
-            const cat = categories[categoryKey];
-            const app = document.getElementById('app');
-            
-            app.innerHTML = `
-                <div class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-                    <div class="p-6">
-                        <button onclick="renderHome()" class="text-gray-400 mb-6 flex items-center gap-2">
-                            <span>←</span> Back
-                        </button>
-                        
-                        <div class="max-w-md mx-auto">
-                            <div class="flex items-center gap-4 mb-8">
-                                <span class="text-5xl">${cat.icon}</span>
-                                <h2 class="text-3xl font-black" style="letter-spacing: -0.01em;">${cat.name}</h2>
-                            </div>
-                            
-                            <p class="text-gray-300 mb-6">Choose a block to start learning (10 phrases per block):</p>
-                            
-                            <div class="space-y-3">
-                                ${blocks.map(blockNum => `
-                                    <button onclick="startLearning('${categoryKey}', ${blockNum})" 
-                                            class="w-full ${cat.color} rounded-xl p-5 flex items-center justify-between shadow-lg category-card">
-                                        <div class="flex items-center gap-4">
-                                            <div class="bg-white/20 p-3 rounded-lg font-bold text-xl">
-                                                ${blockNum}
-                                            </div>
-                                            <span class="font-semibold text-lg">Block ${blockNum}</span>
-                                        </div>
-                                        <span class="text-2xl">›</span>
-                                    </button>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Start learning with selected block
-        function startLearning(categoryKey, blockNum) {
-            currentCategory = categoryKey;
-            currentBlock = blockNum;
-            currentPhraseIndex = 0;
-            
-            // Get phrases for this category and block
-            categoryPhrases = allPhrases.filter(p => 
-                p.category === categoryKey && parseInt(p.block) === blockNum
-            );
-            
-            if (categoryPhrases.length === 0) {
-                alert('No phrases found for this block!');
-                return;
-            }
-            
-            renderLearning();
-        }
-
-        // Render learning screen
-        function renderLearning() {
-            if (currentPhraseIndex >= categoryPhrases.length) {
-                // Completed this block
-                renderBlockComplete();
-                return;
-            }
-            
-            const phrase = categoryPhrases[currentPhraseIndex];
-            const cat = categories[currentCategory];
-            const app = document.getElementById('app');
-            
-            // Calculate global index for this phrase (for audio filename)
-            const globalIndex = allPhrases.findIndex(p => 
-                p.category === phrase.category && 
-                p.block === phrase.block && 
-                p.spanish === phrase.spanish
-            ) + 1;
-            
-            app.innerHTML = `
-                <div class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white p-6">
-                    <button onclick="selectCategory('${currentCategory}')" class="text-gray-400 mb-6 flex items-center gap-2">
-                        <span>←</span> Back to Blocks
-                    </button>
-                    
-                    <div class="max-w-md mx-auto">
-                        <h2 class="text-3xl font-black mb-8 text-center" style="letter-spacing: -0.01em;">
-                            ${cat.name} - Block ${currentBlock}
-                        </h2>
-                        
-                        <div class="bg-gray-800 rounded-2xl p-8 mb-6 shadow-xl">
-                            <div class="text-center mb-6">
-                                <p class="text-gray-400 text-sm mb-2">English</p>
-                                <p class="text-xl mb-6">${phrase.english}</p>
-                                
-                                <p class="text-gray-400 text-sm mb-2">Spanish</p>
-                                <p class="text-3xl font-bold text-yellow-400 mb-6">${phrase.spanish}</p>
-                                
-                                <button onclick="playAudio('${phrase.spanish}')" 
-                                        class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-full font-semibold flex items-center gap-2 mx-auto hover:bg-yellow-400 transition">
-                                    <span>🔊</span>
-                                    Play Audio
-                                </button>
-                            </div>
-                            
-                            <div class="border-t border-gray-700 pt-6">
-                                <p class="text-gray-400 text-sm mb-2">Pronunciation</p>
-                                <p class="text-lg text-gray-300 italic">${phrase.pronunciation}</p>
-                                ${phrase.notes ? `
-                                    <div class="mt-4">
-                                        <p class="text-gray-400 text-sm mb-2">Note</p>
-                                        <p class="text-sm text-yellow-300">${phrase.notes}</p>
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-between gap-4 mb-4">
-                            <button onclick="previousPhrase()" 
-                                    ${currentPhraseIndex === 0 ? 'disabled' : ''}
-                                    class="flex-1 bg-gray-700 px-6 py-3 rounded-full font-semibold disabled:opacity-30 hover:bg-gray-600 transition">
-                                Previous
-                            </button>
-                            <button onclick="nextPhrase()" 
-                                    class="flex-1 bg-yellow-500 text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition">
-                                ${currentPhraseIndex === categoryPhrases.length - 1 ? 'Finish' : 'Next'}
-                            </button>
-                        </div>
-                        
-                        <p class="text-center text-gray-500 mt-4">
-                            ${currentPhraseIndex + 1} of ${categoryPhrases.length}
-                        </p>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Block complete screen
-        function renderBlockComplete() {
-            const cat = categories[currentCategory];
-            const app = document.getElementById('app');
-            
-            app.innerHTML = `
-                <div class="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white p-6 flex items-center justify-center">
-                    <div class="max-w-md mx-auto text-center">
-                        <div class="text-6xl mb-6">🎉</div>
-                        <h2 class="text-4xl font-black mb-4">Block Complete!</h2>
-                        <p class="text-xl text-gray-300 mb-8">
-                            You finished Block ${currentBlock} of ${cat.name}
-                        </p>
-                        
-                        <div class="space-y-3">
-                            <button onclick="selectCategory('${currentCategory}')" 
-                                    class="w-full bg-yellow-500 text-gray-900 px-6 py-4 rounded-xl font-semibold text-lg hover:bg-yellow-400 transition">
-                                Choose Another Block
-                            </button>
-                            <button onclick="renderHome()" 
-                                    class="w-full bg-gray-700 px-6 py-4 rounded-xl font-semibold text-lg hover:bg-gray-600 transition">
-                                Back to Categories
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Navigation functions
-        function nextPhrase() {
-            currentPhraseIndex++;
-            renderLearning();
-        }
-
-        function previousPhrase() {
-            if (currentPhraseIndex > 0) {
-                currentPhraseIndex--;
-                renderLearning();
-            }
-        }
-
-        // Text-to-speech for Spanish
-        function playAudio(text) {
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'es-ES'; // Spanish
-                utterance.rate = 0.8; // Slightly slower for learning
-                speechSynthesis.speak(utterance);
-            } else {
-                alert('Text-to-speech not supported in your browser');
-            }
-        }
-
-        // Initialize app
-        window.onload = function() {
-            loadPhrases();
-        };
-    </script>
 </body>
 </html>
