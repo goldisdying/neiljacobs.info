@@ -1054,6 +1054,42 @@
         grid-template-columns: 1fr;
       }
     }
+  
+    .kit-form { margin-top: 0; }
+    .kit-form-row { display: flex; gap: 0.75rem; max-width: 480px; margin: 0 auto; }
+    .kit-form-row input {
+      flex: 1;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.85rem 1.25rem;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .kit-form-row input:focus { border-color: var(--accent); }
+    .kit-form-row input::placeholder { color: var(--text-secondary); opacity: 0.6; }
+    .kit-form-row button {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.75rem;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+    }
+    .kit-form-row button:hover { background: var(--accent-hover); }
+    .kit-form-row button:disabled { opacity: 0.7; cursor: not-allowed; }
+    .kit-form-msg { margin-top: 0.75rem; font-size: 0.9rem; text-align: center; min-height: 1.2rem; }
+    @media(max-width: 480px) { .kit-form-row { flex-direction: column; } }
   </style>
 </head>
 <body>
@@ -1322,7 +1358,45 @@
         <div class="section-label">Newsletter</div>
         <h2 class="section-title">Bitcoin insights, straight to your inbox.</h2>
         <p class="section-description" style="margin: 0 auto 2rem;">No crypto fluff. No spam. Just Bitcoin.</p>
-        <script async data-uid="efc058068e" src="https://neil-jacobs-2.kit.com/efc058068e/index.js"></script>
+        <form class="kit-form" id="kit-form-homepage">
+        <div class="kit-form-row">
+          <input type="email" name="email_address" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </div>
+        <p class="kit-form-msg" id="kit-msg-homepage"></p>
+      </form>
+      <script>
+        (function() {
+          var form = document.getElementById('kit-form-homepage');
+          var msg = document.getElementById('kit-msg-homepage');
+          form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var email = form.querySelector('input[name="email_address"]').value;
+            var btn = form.querySelector('button');
+            btn.textContent = 'Subscribing...';
+            btn.disabled = true;
+            try {
+              var res = await fetch('https://app.kit.com/forms/9263139/subscriptions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email_address: email })
+              });
+              if (res.ok || res.status === 200 || res.status === 201) {
+                form.style.display = 'none';
+                msg.textContent = 'You are in. Check your email to confirm.';
+                msg.style.color = 'var(--accent)';
+              } else {
+                throw new Error('Failed');
+              }
+            } catch(err) {
+              btn.textContent = 'Subscribe';
+              btn.disabled = false;
+              msg.textContent = 'Something went wrong. Please try again.';
+              msg.style.color = '#e05c5c';
+            }
+          });
+        })();
+      </script>
       </div>
     </div>
   </section>
