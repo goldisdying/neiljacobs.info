@@ -1439,10 +1439,11 @@
         <script>
           document.querySelector('[target="nl-iframe"]').addEventListener('submit', function() {
             var form = this;
+            var success = form.closest('.nl-form-wrap').querySelector('.nl-success');
             setTimeout(function() {
               form.style.display = 'none';
-              document.querySelector('.nl-success').style.display = 'block';
-            }, 1500);
+              success.style.display = 'block';
+            }, 2000);
           });
         <\/script>
       </div>
