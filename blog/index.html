@@ -308,7 +308,7 @@
     }
 
     // Load posts
-    fetch('/posts.json')
+    fetch('/blog/posts.json')
       .then(r => r.json())
       .then(posts => {
         const grid = document.getElementById('posts-grid');
