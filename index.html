@@ -710,6 +710,7 @@
     }
 
     .contact-form input,
+    .contact-form select,
     .contact-form textarea {
       font-family: var(--font-body);
       font-size: 0.95rem;
@@ -723,7 +724,22 @@
       width: 100%;
     }
 
+    .contact-form select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239a9690' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.25rem center;
+      cursor: pointer;
+    }
+
+    .contact-form select option {
+      background: var(--bg-card);
+      color: var(--text-primary);
+    }
+
     .contact-form input:focus,
+    .contact-form select:focus,
     .contact-form textarea:focus {
       border-color: var(--accent);
     }
@@ -1187,7 +1203,15 @@
             <input type="text" name="name" placeholder="Name" required>
             <input type="email" name="email" placeholder="Email" required>
           </div>
-          <input type="text" name="subject" placeholder="Subject">
+          <select name="subject" required>
+            <option value="" disabled selected>What's this about?</option>
+            <option value="Speaking Engagement">Speaking Engagement</option>
+            <option value="Brand & Marketing Consulting">Brand &amp; Marketing Consulting</option>
+            <option value="FOMO21 / Merch">FOMO21 / Merch</option>
+            <option value="Proof of Conference">Proof of Conference</option>
+            <option value="Media / Press">Media / Press</option>
+            <option value="General / Other">General / Other</option>
+          </select>
           <textarea name="message" placeholder="Your message" required></textarea>
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
