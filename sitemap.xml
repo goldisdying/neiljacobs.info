@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://neiljacobs.info/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://neiljacobs.info/blog</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neiljacobs.info/blog/why-bitcoin-not-crypto</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://neiljacobs.info/blog/how-to-market-a-bitcoin-company</loc>
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>never</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://neiljacobs.info/</loc><lastmod>2026-03-29</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://neiljacobs.info/blog</loc><lastmod>2026-03-29</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neiljacobs.info/blog/why-bitcoin-not-crypto</loc><lastmod>2026-03-29</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neiljacobs.info/blog/bitcoin-marketing-institutional-buyers</loc><lastmod>2026-03-22</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neiljacobs.info/blog/bitcoin-conferences-best-marketing-investment</loc><lastmod>2026-03-15</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neiljacobs.info/blog/how-to-build-a-bitcoin-audience</loc><lastmod>2026-03-08</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neiljacobs.info/blog/21-million-rule-scarcity-brand-story</loc><lastmod>2026-03-01</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neiljacobs.info/blog/what-mainstream-brands-get-wrong-about-bitcoin</loc><lastmod>2026-02-22</lastmod><changefreq>never</changefreq><priority>0.7</priority></url>
 </urlset>
