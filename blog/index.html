@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>Blog — Neil Jacobs | Bitcoin Brand Strategy & Marketing</title>
+  <meta name="description" content="Insights on Bitcoin marketing, brand strategy, and building in the Bitcoin economy. No crypto fluff — just Bitcoin.">
+  <meta name="author" content="Neil Jacobs">
+  <link rel="canonical" href="https://neiljacobs.info/blog">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog — Neil Jacobs | Bitcoin Brand Strategy & Marketing">
+  <meta property="og:description" content="Insights on Bitcoin marketing, brand strategy, and building in the Bitcoin economy. No crypto fluff — just Bitcoin.">
+  <meta property="og:url" content="https://neiljacobs.info/blog">
+  <meta property="og:image" content="https://neiljacobs.info/images/Neil-jacobs-live.jpg">
+  <meta property="og:site_name" content="Neil Jacobs">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@NeilJacobs">
+  <meta name="twitter:title" content="Blog — Neil Jacobs | Bitcoin Brand Strategy & Marketing">
+  <meta name="twitter:description" content="Insights on Bitcoin marketing, brand strategy, and building in the Bitcoin economy.">
+  <meta name="twitter:image" content="https://neiljacobs.info/images/Neil-jacobs-live.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #111111;
+      --bg-card: #161616;
+      --text-primary: #f0ede6;
+      --text-secondary: #9a9690;
+      --accent: #e8910c;
+      --accent-glow: rgba(232, 145, 12, 0.15);
+      --accent-hover: #f5a623;
+      --border: rgba(255, 255, 255, 0.06);
+      --font-display: 'DM Sans', sans-serif;
+      --font-body: 'Outfit', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { height: 28px; opacity: 0.95; transition: filter 0.3s ease; }
+    .nav-logo:hover { filter: brightness(0) saturate(100%) invert(56%) sepia(93%) saturate(2000%) hue-rotate(8deg) brightness(103%) contrast(101%); }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active { color: var(--text-primary); }
+    .nav-cta {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.5rem;
+      background: var(--accent);
+      color: #000000 !important;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .nav-cta:hover { background: var(--accent-hover); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--text-primary); transition: all 0.3s ease; }
+
+    /* HERO */
+    .blog-hero {
+      padding: 10rem 2rem 5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .blog-hero-inner { max-width: 1200px; margin: 0 auto; }
+    .blog-hero-label {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .blog-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .blog-hero-desc {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* POSTS GRID */
+    .posts-section { padding: 5rem 2rem; }
+    .posts-inner { max-width: 1200px; margin: 0 auto; }
+
+    #posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .post-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .post-card:hover {
+      border-color: rgba(232, 145, 12, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .post-card:hover::before { opacity: 1; }
+
+    .post-category {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-glow);
+      padding: 0.3rem 0.75rem;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+    }
+    .post-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      flex-grow: 1;
+    }
+    .post-excerpt {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .post-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .post-date {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .post-read-time {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .post-link {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      transition: gap 0.3s ease;
+    }
+    .post-link:hover { gap: 0.85rem; }
+    .post-link svg { width: 14px; height: 14px; }
+
+    /* FOOTER */
+    footer { padding: 3rem 2rem; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .footer-copy { font-size: 0.85rem; color: var(--text-secondary); font-weight: 300; }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.85rem; color: var(--text-secondary); font-weight: 400; transition: color 0.3s ease; }
+    .footer-links a:hover { color: var(--text-primary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      #posts-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: rgba(10,10,10,0.95); backdrop-filter: blur(20px); padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      #posts-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo-link">
+      <img src="images/NEIL-JACOBS-LOGO-white.png" alt="Neil Jacobs" class="nav-logo">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#speaking">Speaking</a></li>
+      <li><a href="/blog" class="active">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="blog-hero-inner">
+      <div class="blog-hero-label">Blog</div>
+      <h1 class="blog-hero-title">Bitcoin. Brand. Growth.</h1>
+      <p class="blog-hero-desc">Insights on marketing, brand strategy, and building in the Bitcoin economy. No crypto fluff — just Bitcoin.</p>
+    </div>
+  </section>
+
+  <section class="posts-section">
+    <div class="posts-inner">
+      <div id="posts-grid"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Neil Jacobs. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://x.com/NeilJacobs" target="_blank">X</a>
+        <a href="https://www.linkedin.com/in/neiljacobs/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/therealneiljacobs" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // Format date
+    function formatDate(str) {
+      const [y, m, d] = str.split('-');
+      return new Date(y, m - 1, d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    // Load posts
+    fetch('/posts.json')
+      .then(r => r.json())
+      .then(posts => {
+        const grid = document.getElementById('posts-grid');
+        grid.innerHTML = posts.map(p => `
+          <a href="/blog/${p.slug}" class="post-card">
+            <span class="post-category">${p.category}</span>
+            <h2 class="post-title">${p.title}</h2>
+            <p class="post-excerpt">${p.description}</p>
+            <div class="post-meta">
+              <span class="post-date">${formatDate(p.date)}</span>
+              <span class="post-read-time">${p.readTime}</span>
+            </div>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </a>
+        `).join('');
+      });
+  </script>
+
+</body>
+</html>
