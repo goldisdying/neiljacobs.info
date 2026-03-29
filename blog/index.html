@@ -168,6 +168,21 @@
     }
     .post-card:hover::before { opacity: 1; }
 
+    .post-thumb {
+      margin: -2rem -2rem 1.5rem;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 12px 12px 0 0;
+    }
+    .post-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .post-card:hover .post-thumb img { transform: scale(1.05); }
+    .post-card-body { display: flex; flex-direction: column; flex: 1; }
+
     .post-category {
       font-family: var(--font-display);
       font-size: 0.65rem;
@@ -314,14 +329,17 @@
         const grid = document.getElementById('posts-grid');
         grid.innerHTML = posts.map(p => `
           <a href="/blog/${p.slug}" class="post-card">
-            <span class="post-category">${p.category}</span>
-            <h2 class="post-title">${p.title}</h2>
-            <p class="post-excerpt">${p.description}</p>
-            <div class="post-meta">
-              <span class="post-date">${formatDate(p.date)}</span>
-              <span class="post-read-time">${p.readTime}</span>
+            ${p.image ? `<div class="post-thumb"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>` : ''}
+            <div class="post-card-body">
+              <span class="post-category">${p.category}</span>
+              <h2 class="post-title">${p.title}</h2>
+              <p class="post-excerpt">${p.description}</p>
+              <div class="post-meta">
+                <span class="post-date">${formatDate(p.date)}</span>
+                <span class="post-read-time">${p.readTime}</span>
+              </div>
+              <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
             </div>
-            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
           </a>
         `).join('');
       });
