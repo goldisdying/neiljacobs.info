@@ -47,6 +47,70 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a Bitcoin brand strategist do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Bitcoin brand strategist helps companies in the Bitcoin space build recognition, grow their audience, and communicate what makes them different. That means everything from positioning and messaging to content strategy, social media, and conference presence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is Neil Jacobs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Neil Jacobs is a Bitcoin brand and marketing strategist based in the United States. He has spoken at Bitcoin 2025, BTC Prague in Prague, Czech Republic, and other Bitcoin conferences globally including events in Abu Dhabi UAE, Medellin Colombia, and Montreal Canada. He is the co-founder of FOMO21, a Bitcoin apparel brand that has served customers in over 70 countries, and Proof of Conference, a directory of Bitcoin conferences worldwide."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Bitcoin conferences has Neil Jacobs spoken at?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Neil has spoken at Bitcoin 2025, BTC Prague, Bitcoin Medellin, Canadian Bitcoin Conference, Pacific Bitcoin, BitcoinDay, and others. He has spoken at Bitcoin conferences globally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I hire Neil Jacobs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can reach Neil through the contact form on this site. He is open to brand strategy consulting, speaking engagements, full-time roles, and contract work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is FOMO21?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FOMO21 is a Bitcoin-themed apparel and merchandise brand co-founded by Neil Jacobs. It has served customers in over 70 countries and accepts Bitcoin payments. Visit fomo21.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Proof of Conference?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proof of Conference is a Bitcoin conference directory founded by Neil Jacobs that helps Bitcoiners find events around the world. It lists conferences globally and offers discount codes for many events. Visit proofofconference.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Neil Jacobs work with non-Bitcoin companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends. Neil works exclusively with Bitcoin-focused companies and individuals within the crypto space and does not work with altcoin or crypto projects. Outside of the crypto space, he is open to working with companies in other industries."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -839,6 +903,18 @@
       color: var(--text-primary);
     }
 
+
+    /* =========================================
+       FAQ
+    ========================================= */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.3; }
+    .faq-a { font-size: 0.95rem; font-weight: 300; color: var(--text-secondary); line-height: 1.8; }
+    .faq-a a { color: var(--accent); border-bottom: 1px solid rgba(232,145,12,0.3); transition: border-color 0.3s ease; }
+    .faq-a a:hover { border-color: var(--accent); }
+
     /* =========================================
        ANIMATIONS
     ========================================= */
@@ -1303,6 +1379,52 @@
           <textarea name="message" placeholder="Your message" required></textarea>
           <button type="submit" class="btn-primary">Send Message</button>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section" id="faq" style="background: var(--bg-secondary); border-top: 1px solid var(--border);">
+    <div class="section-inner">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list" style="margin-top: 2.5rem; max-width: 800px;">
+
+        <div class="faq-item">
+          <h3 class="faq-q">What does a Bitcoin brand strategist do?</h3>
+          <p class="faq-a">A Bitcoin brand strategist helps companies in the Bitcoin space build recognition, grow their audience, and communicate what makes them different. That means everything from positioning and messaging to content strategy, social media, and conference presence.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Who is Neil Jacobs?</h3>
+          <p class="faq-a">Neil Jacobs is a Bitcoin brand and marketing strategist based in the United States. He has spoken at Bitcoin 2025, BTC Prague in Prague, Czech Republic, and other Bitcoin conferences globally including events in Abu Dhabi UAE, Medellin Colombia, and Montreal Canada. He is the co-founder of <a href="https://fomo21.com" target="_blank">FOMO21</a>, a Bitcoin apparel brand that has served customers in over 70 countries, and <a href="https://proofofconference.com" target="_blank">Proof of Conference</a>, a directory of Bitcoin conferences worldwide.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">What Bitcoin conferences has Neil Jacobs spoken at?</h3>
+          <p class="faq-a">Neil has spoken at Bitcoin 2025, BTC Prague, Bitcoin Medellin, Canadian Bitcoin Conference, Pacific Bitcoin, BitcoinDay, and others. He has spoken at Bitcoin conferences globally.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">How can I hire Neil Jacobs?</h3>
+          <p class="faq-a">You can reach Neil through the contact form on this site. He is open to brand strategy consulting, speaking engagements, full-time roles, and contract work.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">What is FOMO21?</h3>
+          <p class="faq-a">FOMO21 is a Bitcoin-themed apparel and merchandise brand co-founded by Neil Jacobs. It has served customers in over 70 countries and accepts Bitcoin payments. Visit <a href="https://fomo21.com" target="_blank">fomo21.com</a>.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">What is Proof of Conference?</h3>
+          <p class="faq-a">Proof of Conference is a Bitcoin conference directory founded by Neil Jacobs that helps Bitcoiners find events around the world. It lists conferences globally and offers discount codes for many events. Visit <a href="https://proofofconference.com" target="_blank">proofofconference.com</a>.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3 class="faq-q">Does Neil Jacobs work with non-Bitcoin companies?</h3>
+          <p class="faq-a">It depends. Neil works exclusively with Bitcoin-focused companies and individuals within the crypto space and does not work with altcoin or crypto projects. Outside of the crypto space, he is open to working with companies in other industries.</p>
+        </div>
+
       </div>
     </div>
   </section>
