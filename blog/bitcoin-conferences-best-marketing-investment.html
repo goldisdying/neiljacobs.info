@@ -99,6 +99,14 @@
       .formkit-form[data-uid="31cba85161"] .seva-fields { flex-direction: column !important; }
       .formkit-form[data-uid="31cba85161"] .formkit-submit { width: 100% !important; }
     }
+  
+    /* FAQ */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.9rem; font-weight: 300; color: var(--text-secondary); line-height: 1.7; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80Y6VL5CLH"></script>
@@ -107,6 +115,38 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-80Y6VL5CLH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the best Bitcoin conferences to attend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bitcoin Conference is the largest and most important. BTC Prague is the best international event. Pacific Bitcoin is great for deeper conversations. Regional events like BitcoinDay offer high ROI at lower cost. Proof of Conference lists all major events at proofofconference.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is attending Bitcoin conferences worth it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Bitcoin community is trust-based and relationship-driven. One genuine conversation at a conference is worth more than thousands of ad impressions. Showing up consistently builds a reputation that compounds over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you network at Bitcoin conferences?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go with a clear intention, not a pitch. Be curious, be generous with introductions, and do not try to sell anything on first contact. Follow up within 48 hours. Show up at the same events year after year. Consistency is how you become a fixture in the community."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -212,6 +252,23 @@
         </a>
       </div>
     </div>
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+          <h3 class="faq-q">What are the best Bitcoin conferences to attend?</h3>
+          <p class="faq-a">Bitcoin Conference is the largest and most important. BTC Prague is the best international event. Pacific Bitcoin is great for deeper conversations. Regional events like BitcoinDay offer high ROI at lower cost. <a href="https://proofofconference.com" target="_blank">Proof of Conference</a> lists all major events worldwide.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Is attending Bitcoin conferences worth it?</h3>
+          <p class="faq-a">Yes. The Bitcoin community is trust-based and relationship-driven. One genuine conversation at a conference is worth more than thousands of ad impressions. Showing up consistently builds a reputation that compounds over time.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">How do you network at Bitcoin conferences?</h3>
+          <p class="faq-a">Go with a clear intention, not a pitch. Be curious, be generous with introductions, and do not try to sell anything on first contact. Follow up within 48 hours. Show up at the same events year after year. Consistency is how you become a fixture in the community.</p>
+        </div>
+    </div>
+
     <div class="newsletter-section">
       <h3>Bitcoin insights, straight to your inbox.</h3>
       <p>Bitcoin insights, conference picks, and more.</p>

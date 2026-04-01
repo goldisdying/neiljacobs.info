@@ -99,6 +99,14 @@
       .formkit-form[data-uid="31cba85161"] .seva-fields { flex-direction: column !important; }
       .formkit-form[data-uid="31cba85161"] .formkit-submit { width: 100% !important; }
     }
+  
+    /* FAQ */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.9rem; font-weight: 300; color: var(--text-secondary); line-height: 1.7; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80Y6VL5CLH"></script>
@@ -107,6 +115,38 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-80Y6VL5CLH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why do companies fail at Bitcoin marketing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most companies use vague language like blockchain technology or digital assets instead of saying Bitcoin. They treat it as a treasury move rather than a values statement. The Bitcoin community is exceptionally good at detecting inauthenticity and they ignore brands that are not genuinely committed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is authentic Bitcoin branding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Authentic Bitcoin branding uses the right language, has a clear point of view, shows up in the community, and stays consistent over time. It says Bitcoin, not crypto. It explains why the company believes in Bitcoin rather than just announcing they hold it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do brands earn trust in the Bitcoin community?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By showing up consistently, using accurate language, and demonstrating genuine understanding of what makes Bitcoin different. One press release means nothing. Companies that attend conferences, contribute to the conversation, and stay the course year after year earn real trust."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -212,6 +252,23 @@
         </a>
       </div>
     </div>
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+          <h3 class="faq-q">Why do companies fail at Bitcoin marketing?</h3>
+          <p class="faq-a">Most companies use vague language like blockchain technology or digital assets instead of saying Bitcoin. They treat it as a treasury move rather than a values statement. The Bitcoin community is exceptionally good at detecting inauthenticity and they ignore brands that are not genuinely committed.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is authentic Bitcoin branding?</h3>
+          <p class="faq-a">Authentic Bitcoin branding uses the right language, has a clear point of view, shows up in the community, and stays consistent over time. It says Bitcoin, not crypto. It explains why the company believes in Bitcoin rather than just announcing they hold it.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">How do brands earn trust in the Bitcoin community?</h3>
+          <p class="faq-a">By showing up consistently, using accurate language, and demonstrating genuine understanding of what makes Bitcoin different. One press release means nothing. Companies that attend conferences, contribute to the conversation, and stay the course year after year earn real trust.</p>
+        </div>
+    </div>
+
     <div class="newsletter-section">
       <h3>Bitcoin insights, straight to your inbox.</h3>
       <p>Bitcoin insights, conference picks, and more.</p>

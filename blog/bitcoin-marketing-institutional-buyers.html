@@ -135,6 +135,14 @@
       .formkit-form[data-uid="31cba85161"] .seva-fields { flex-direction: column !important; }
       .formkit-form[data-uid="31cba85161"] .formkit-submit { width: 100% !important; }
     }
+  
+    /* FAQ */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.9rem; font-weight: 300; color: var(--text-secondary); line-height: 1.7; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80Y6VL5CLH"></script>
@@ -143,6 +151,38 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-80Y6VL5CLH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do you market Bitcoin to institutional investors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lead with outcomes, not ideology. Institutional buyers respond to store of value, inflation protection, and portfolio diversification. They were brought in by BlackRock and Fidelity, not whitepapers. Meet them where they are before introducing the deeper philosophy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What changed in Bitcoin marketing after the ETF approval?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The ETF approvals in 2024 brought a new type of buyer who found Bitcoin through mainstream financial media rather than the rabbit hole. This buyer needs different language, different entry points, and a bridge between traditional finance thinking and Bitcoin fundamentals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you talk to new Bitcoin buyers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lead with outcomes they already understand — inflation protection, store of value, portfolio diversification. Avoid jargon like hodling, satoshis, or hyperbitcoinization until they are already engaged. Still say Bitcoin, not crypto, and explain the distinction clearly."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -248,6 +288,23 @@
         </a>
       </div>
     </div>
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+          <h3 class="faq-q">How do you market Bitcoin to institutional investors?</h3>
+          <p class="faq-a">Lead with outcomes, not ideology. Institutional buyers respond to store of value, inflation protection, and portfolio diversification. They were brought in by BlackRock and Fidelity, not whitepapers. Meet them where they are before introducing the deeper philosophy.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What changed in Bitcoin marketing after the ETF approval?</h3>
+          <p class="faq-a">The ETF approvals in 2024 brought a new type of buyer who found Bitcoin through mainstream financial media rather than the rabbit hole. This buyer needs different language, different entry points, and a bridge between traditional finance thinking and Bitcoin fundamentals.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">How do you talk to new Bitcoin buyers?</h3>
+          <p class="faq-a">Lead with outcomes they already understand — inflation protection, store of value, portfolio diversification. Avoid jargon like hodling, satoshis, or hyperbitcoinization until they are already engaged. Still say Bitcoin, not crypto, and explain the distinction clearly.</p>
+        </div>
+    </div>
+
     <div class="newsletter-section">
       <h3>Bitcoin insights, straight to your inbox.</h3>
       <p>Bitcoin insights, conference picks, and more.</p>

@@ -99,6 +99,14 @@
       .formkit-form[data-uid="31cba85161"] .seva-fields { flex-direction: column !important; }
       .formkit-form[data-uid="31cba85161"] .formkit-submit { width: 100% !important; }
     }
+  
+    /* FAQ */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.9rem; font-weight: 300; color: var(--text-secondary); line-height: 1.7; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80Y6VL5CLH"></script>
@@ -107,6 +115,38 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-80Y6VL5CLH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is Bitcoin limited to 21 million?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 21 million cap was built into Bitcoin's protocol by Satoshi Nakamoto from the start. It is enforced by math and maintained by a global network of participants who have every incentive to keep it that way. It cannot be changed by a vote, a company, or a government."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Bitcoin scarcity affect its value?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scarcity is one of the core drivers of value in any asset. With a fixed supply of 21 million and growing global demand, basic economics points in one direction. There are more millionaires in the world today than there are whole Bitcoin in existence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes Bitcoin different from other currencies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every fiat currency in history has been inflated by governments. Bitcoin is the first monetary asset with a hard cap enforced by code rather than policy. No authority can print more Bitcoin. That is what makes it fundamentally different from every currency that has ever existed."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -216,6 +256,23 @@
         </a>
       </div>
     </div>
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+          <h3 class="faq-q">Why is Bitcoin limited to 21 million?</h3>
+          <p class="faq-a">The 21 million cap was built into Bitcoin's protocol by Satoshi Nakamoto from the start. It is enforced by math and maintained by a global network of participants who have every incentive to keep it that way. It cannot be changed by a vote, a company, or a government.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">How does Bitcoin scarcity affect its value?</h3>
+          <p class="faq-a">Scarcity is one of the core drivers of value in any asset. With a fixed supply of 21 million and growing global demand, basic economics points in one direction. There are more millionaires in the world today than there are whole Bitcoin in existence.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What makes Bitcoin different from other currencies?</h3>
+          <p class="faq-a">Every fiat currency in history has been inflated by governments. Bitcoin is the first monetary asset with a hard cap enforced by code rather than policy. No authority can print more Bitcoin. That is what makes it fundamentally different from every currency that has ever existed.</p>
+        </div>
+    </div>
+
     <div class="newsletter-section">
       <h3>Bitcoin insights, straight to your inbox.</h3>
       <p>Bitcoin insights, conference picks, and more.</p>

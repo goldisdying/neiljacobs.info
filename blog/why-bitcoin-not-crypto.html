@@ -321,6 +321,14 @@
       .formkit-form[data-uid="31cba85161"] .seva-fields { flex-direction: column !important; }
       .formkit-form[data-uid="31cba85161"] .formkit-submit { width: 100% !important; }
     }
+  
+    /* FAQ */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.9rem; font-weight: 300; color: var(--text-secondary); line-height: 1.7; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80Y6VL5CLH"></script>
@@ -329,6 +337,38 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-80Y6VL5CLH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between Bitcoin and crypto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bitcoin is a specific decentralized, fixed-supply monetary network created in 2009. Crypto is a catch-all term for thousands of digital tokens that came after Bitcoin. They are fundamentally different in design, purpose, and governance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I say Bitcoin instead of crypto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Saying Bitcoin instead of crypto is more accurate and protects your brand. When you use the word crypto, you associate Bitcoin with scams, rug pulls, and failed projects that have nothing to do with it. Bitcoin stands on its own."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Bitcoin the same as cryptocurrency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bitcoin is a specific protocol with unique properties including a fixed supply of 21 million, proof of work security, and no central authority. Cryptocurrency is a broad category that includes thousands of tokens with very different designs and purposes."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -435,6 +475,23 @@
           <span class="related-title">How to Build a Bitcoin Audience From Zero</span>
         </a>
       </div>
+    </div>
+
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+          <h3 class="faq-q">What is the difference between Bitcoin and crypto?</h3>
+          <p class="faq-a">Bitcoin is a specific decentralized, fixed-supply monetary network created in 2009. Crypto is a catch-all term for thousands of digital tokens that came after Bitcoin. They are fundamentally different in design, purpose, and governance.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Why should I say Bitcoin instead of crypto?</h3>
+          <p class="faq-a">Saying Bitcoin instead of crypto is more accurate and protects your brand. When you use the word crypto, you associate Bitcoin with scams, rug pulls, and failed projects that have nothing to do with it. Bitcoin stands on its own.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Is Bitcoin the same as cryptocurrency?</h3>
+          <p class="faq-a">No. Bitcoin is a specific protocol with unique properties including a fixed supply of 21 million, proof of work security, and no central authority. Cryptocurrency is a broad category that includes thousands of tokens with very different designs and purposes.</p>
+        </div>
     </div>
 
     <div class="newsletter-section">

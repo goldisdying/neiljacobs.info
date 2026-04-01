@@ -99,6 +99,14 @@
       .formkit-form[data-uid="31cba85161"] .seva-fields { flex-direction: column !important; }
       .formkit-form[data-uid="31cba85161"] .formkit-submit { width: 100% !important; }
     }
+  
+    /* FAQ */
+    .faq-section { margin-top: 3rem; }
+    .faq-section h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+    .faq-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+    .faq-a { font-size: 0.9rem; font-weight: 300; color: var(--text-secondary); line-height: 1.7; }
   </style>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-80Y6VL5CLH"></script>
@@ -107,6 +115,38 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-80Y6VL5CLH');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I grow a Bitcoin audience on X?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with a clear point of view, not just information. Post one thing worth reading every day. Engage in conversations before expecting people to come to yours. Reply to people you respect with something real to add. Consistency over volume, every time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best platform for Bitcoin content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "X is still the Bitcoin town square. It is where the community lives, debates, and builds. Instagram and LinkedIn have their place but X is where reputations are built fastest in this space. Start there before spreading thin across every platform."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a Bitcoin following?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It takes years to build a real audience, not weeks. The curve bends upward if you stay consistent. Focus on saying something worth reading every day rather than chasing follower counts. The audience follows the point of view, not the other way around."
+        }
+      }
+    ]
+  }
   </script>
 </head>
 <body>
@@ -212,6 +252,23 @@
         </a>
       </div>
     </div>
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+          <h3 class="faq-q">How do I grow a Bitcoin audience on X?</h3>
+          <p class="faq-a">Start with a clear point of view, not just information. Post one thing worth reading every day. Engage in conversations before expecting people to come to yours. Reply to people you respect with something real to add. Consistency over volume, every time.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is the best platform for Bitcoin content?</h3>
+          <p class="faq-a">X is still the Bitcoin town square. It is where the community lives, debates, and builds. Instagram and LinkedIn have their place but X is where reputations are built fastest in this space. Start there before spreading thin across every platform.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">How long does it take to build a Bitcoin following?</h3>
+          <p class="faq-a">It takes years to build a real audience, not weeks. The curve bends upward if you stay consistent. Focus on saying something worth reading every day rather than chasing follower counts. The audience follows the point of view, not the other way around.</p>
+        </div>
+    </div>
+
     <div class="newsletter-section">
       <h3>Bitcoin insights, straight to your inbox.</h3>
       <p>Bitcoin insights, conference picks, and more.</p>
