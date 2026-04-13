@@ -303,55 +303,107 @@
 
   <section class="posts-section">
     <div class="posts-inner">
-      <div id="posts-grid"></div>
-    </div>
-  </section>
+            <div id="posts-grid">
 
-  <footer>
-    <div class="footer-inner">
-      <span class="footer-copy">&copy; 2026 Neil Jacobs. All rights reserved.</span>
-      <div class="footer-links">
-        <a href="https://x.com/NeilJacobs" target="_blank">X</a>
-        <a href="https://www.linkedin.com/in/neiljacobs/" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com/therealneiljacobs" target="_blank">Instagram</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Mobile nav
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-
-    // Format date
-    function formatDate(str) {
-      const [y, m, d] = str.split('-');
-      return new Date(y, m - 1, d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    }
-
-    // Load posts
-    fetch('/blog/posts.json')
-      .then(r => r.json())
-      .then(posts => {
-        const grid = document.getElementById('posts-grid');
-        grid.innerHTML = posts.map(p => `
-          <a href="/blog/${p.slug}" class="post-card">
-            ${p.image ? `<div class="post-thumb"><img src="${p.image}" alt="${p.title}" loading="lazy"></div>` : ''}
-            <div class="post-card-body">
-              <span class="post-category">${p.category}</span>
-              <h2 class="post-title">${p.title}</h2>
-              <p class="post-excerpt">${p.description}</p>
-              <div class="post-meta">
-                <span class="post-date">${formatDate(p.date)}</span>
-                <span class="post-read-time">${p.readTime}</span>
-              </div>
-              <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+        <a href="/blog/how-to-speak-at-bitcoin-conferences" class="post-card">
+          <div class="post-thumb"><img src="/blog/images/how-to-speak-at-bitcoin-conferences.webp" alt="How to Get a Speaking Slot at a Bitcoin Conference" loading="lazy"></div>
+          <div class="post-card-body">
+            <span class="post-category">Bitcoin Marketing</span>
+            <h2 class="post-title">How to Get a Speaking Slot at a Bitcoin Conference</h2>
+            <p class="post-excerpt">Getting on stage at a Bitcoin conference takes more than a good idea. Here's exactly how to land speaking slots from someone who has done it globally.</p>
+            <div class="post-meta">
+              <span class="post-date">April 6, 2026</span>
+              <span class="post-read-time">6 min read</span>
             </div>
-          </a>
-        `).join('');
-      });
-  </script>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </div>
+        </a>
+
+        <a href="/blog/why-bitcoin-not-crypto" class="post-card">
+          <div class="post-thumb"><img src="/blog/images/why-bitcoin-not-crypto.webp" alt="Why Bitcoin, Not Crypto: The Distinction That Changes Everything" loading="lazy"></div>
+          <div class="post-card-body">
+            <span class="post-category">Bitcoin Basics</span>
+            <h2 class="post-title">Why Bitcoin, Not Crypto: The Distinction That Changes Everything</h2>
+            <p class="post-excerpt">Most people lump Bitcoin in with "crypto." That's a mistake. Here's why Bitcoin is fundamentally different and why the distinction matters for your money, your brand, and your future.</p>
+            <div class="post-meta">
+              <span class="post-date">March 29, 2026</span>
+              <span class="post-read-time">5 min read</span>
+            </div>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </div>
+        </a>
+
+        <a href="/blog/bitcoin-marketing-institutional-buyers" class="post-card">
+          <div class="post-thumb"><img src="/blog/images/bitcoin-marketing-institutional-buyers.webp" alt="Bitcoin Marketing for the Institutional Era" loading="lazy"></div>
+          <div class="post-card-body">
+            <span class="post-category">Bitcoin Marketing</span>
+            <h2 class="post-title">Bitcoin Marketing for the Institutional Era</h2>
+            <p class="post-excerpt">The ETF era changed who buys Bitcoin. Here's how to market to a buyer whose first exposure was CNBC, not a whitepaper. New audience, new playbook.</p>
+            <div class="post-meta">
+              <span class="post-date">March 22, 2026</span>
+              <span class="post-read-time">6 min read</span>
+            </div>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </div>
+        </a>
+
+        <a href="/blog/bitcoin-conferences-best-marketing-investment" class="post-card">
+          <div class="post-thumb"><img src="/blog/images/bitcoin-conferences-best-marketing-investment.webp" alt="Bitcoin Conferences: The Best Marketing ROI" loading="lazy"></div>
+          <div class="post-card-body">
+            <span class="post-category">Bitcoin Marketing</span>
+            <h2 class="post-title">Bitcoin Conferences: The Best Marketing ROI You Are Probably Ignoring</h2>
+            <p class="post-excerpt">Digital ads are noise. In-person is signal. After 10+ Bitcoin conferences, here's why showing up in person is the highest-ROI marketing move you can make.</p>
+            <div class="post-meta">
+              <span class="post-date">March 15, 2026</span>
+              <span class="post-read-time">6 min read</span>
+            </div>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </div>
+        </a>
+
+        <a href="/blog/how-to-build-a-bitcoin-audience" class="post-card">
+          <div class="post-thumb"><img src="/blog/images/how-to-build-a-bitcoin-audience.webp" alt="How to Build a Bitcoin Audience From Zero" loading="lazy"></div>
+          <div class="post-card-body">
+            <span class="post-category">Bitcoin Marketing</span>
+            <h2 class="post-title">How to Build a Bitcoin Audience From Zero</h2>
+            <p class="post-excerpt">You don't need followers to start. You need a point of view. Here's how to build a real Bitcoin audience that trusts you and actually buys from you.</p>
+            <div class="post-meta">
+              <span class="post-date">March 8, 2026</span>
+              <span class="post-read-time">5 min read</span>
+            </div>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </div>
+        </a>
+
+        <a href="/blog/21-million-rule-scarcity-brand-story" class="post-card">
+          <div class="post-thumb"><img src="/blog/images/21-million-rule-scarcity-brand-story.webp" alt="The 21 Million Rule: Scarcity as Brand Story" loading="lazy"></div>
+          <div class="post-card-body">
+            <span class="post-category">Bitcoin & Branding</span>
+            <h2 class="post-title">The 21 Million Rule: Why Scarcity Is the Most Powerful Brand Story Ever Told</h2>
+            <p class="post-excerpt">Bitcoin's 21 million supply cap is not just monetary policy. It is the most powerful scarcity narrative in marketing history. Here's how to use it.</p>
+            <div class="post-meta">
+              <span class="post-date">March 1, 2026</span>
+              <span class="post-read-time">6 min read</span>
+            </div>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </div>
+        </a>
+
+        <a href="/blog/what-mainstream-brands-get-wrong-about-bitcoin" class="post-card">
+          <div class="post-thumb"><img src="/blog/images/what-mainstream-brands-get-wrong-about-bitcoin.webp" alt="What Mainstream Brands Keep Getting Wrong About Bitcoin" loading="lazy"></div>
+          <div class="post-card-body">
+            <span class="post-category">Bitcoin Marketing</span>
+            <h2 class="post-title">What Mainstream Brands Keep Getting Wrong About Bitcoin</h2>
+            <p class="post-excerpt">Most corporate Bitcoin announcements feel hollow. Bitcoiners smell inauthenticity instantly. Here's what mainstream brands keep getting wrong and what good looks like.</p>
+            <div class="post-meta">
+              <span class="post-date">February 22, 2026</span>
+              <span class="post-read-time">6 min read</span>
+            </div>
+            <span class="post-link">Read More <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13L13 3M13 3H5M13 3v8"/></svg></span>
+          </div>
+        </a>
+
+      </div>
 
 </body>
 </html>
