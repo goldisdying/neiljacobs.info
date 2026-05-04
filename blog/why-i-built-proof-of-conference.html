@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Why I Built Proof of Conference | Neil Jacobs</title>
+  <meta name="description" content="There was no clean, simple directory of Bitcoin conferences worldwide. So I built one. Here's the story behind Proof of Conference.">
+  <meta name="author" content="Neil Jacobs">
+  <link rel="canonical" href="https://neiljacobs.info/blog/why-i-built-proof-of-conference">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why I Built Proof of Conference">
+  <meta property="og:description" content="There was no clean, simple directory of Bitcoin conferences worldwide. So I built one. Here's the story behind Proof of Conference.">
+  <meta property="og:url" content="https://neiljacobs.info/blog/why-i-built-proof-of-conference">
+  <meta property="og:image" content="https://neiljacobs.info/blog/images/why-i-built-proof-of-conference.webp">
+  <meta property="og:site_name" content="Neil Jacobs">
+  <meta property="article:author" content="Neil Jacobs">
+  <meta property="article:published_time" content="2026-04-20">
+  <meta property="article:section" content="Bitcoin">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@NeilJacobs">
+  <meta name="twitter:creator" content="@NeilJacobs">
+  <meta name="twitter:title" content="Why I Built Proof of Conference">
+  <meta name="twitter:description" content="There was no clean, simple directory of Bitcoin conferences worldwide. So I built one. Here's the story behind Proof of Conference.">
+  <meta name="twitter:image" content="https://neiljacobs.info/blog/images/why-i-built-proof-of-conference.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why I Built Proof of Conference",
+    "description": "There was no clean, simple directory of Bitcoin conferences worldwide. So I built one. Here's the story behind Proof of Conference.",
+    "author": { "@type": "Person", "name": "Neil Jacobs", "url": "https://neiljacobs.info", "jobTitle": "Bitcoin Brand & Marketing Strategist", "sameAs": "https://x.com/NeilJacobs" },
+    "publisher": { "@type": "Person", "name": "Neil Jacobs", "url": "https://neiljacobs.info" },
+    "datePublished": "2026-04-20",
+    "image": "https://neiljacobs.info/blog/images/why-i-built-proof-of-conference.webp",
+    "url": "https://neiljacobs.info/blog/why-i-built-proof-of-conference",
+    "mainEntityOfPage": "https://neiljacobs.info/blog/why-i-built-proof-of-conference"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Proof of Conference?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proof of Conference is a Bitcoin conference directory founded by Neil Jacobs. It lists Bitcoin conferences worldwide, is easily searchable, and offers discount codes for many events. Visit proofofconference.com."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who founded Proof of Conference?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proof of Conference was founded by Neil Jacobs, a Bitcoin brand and marketing strategist based in the United States."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find Bitcoin conferences worldwide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Proof of Conference at proofofconference.com is a searchable directory of Bitcoin conferences happening around the world. It covers events across dozens of countries and includes discount codes for many conferences."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-80Y6VL5CLH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-80Y6VL5CLH');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--bg-primary:#0a0a0a;--bg-secondary:#111111;--bg-card:#161616;--text-primary:#f0ede6;--text-secondary:#9a9690;--accent:#e8910c;--accent-glow:rgba(232,145,12,0.15);--accent-hover:#f5a623;--border:rgba(255,255,255,0.06);--font-display:'DM Sans',sans-serif;--font-body:'Outfit',sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .nav-logo{height:28px;opacity:.95;transition:filter .3s ease}.nav-logo:hover{filter:brightness(0) saturate(100%) invert(56%) sepia(93%) saturate(2000%) hue-rotate(8deg) brightness(103%) contrast(101%)}
+    .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}.nav-links a{font-family:var(--font-display);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);transition:color .3s ease}.nav-links a:hover{color:var(--text-primary)}
+    .nav-cta{font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.6rem 1.5rem;background:var(--accent);color:#000!important;border-radius:4px;transition:all .3s ease}.nav-cta:hover{background:var(--accent-hover)}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}.nav-toggle span{display:block;width:24px;height:2px;background:var(--text-primary)}
+    .article-wrap{max-width:740px;margin:0 auto;padding:9rem 2rem 6rem}
+    .article-back{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:3rem;transition:color .3s ease}.article-back:hover{color:var(--accent)}.article-back svg{width:14px;height:14px}
+    .article-cover{margin-bottom:3rem;border-radius:12px;overflow:hidden}.article-cover img{width:100%;height:auto;display:block}
+    .article-category{font-family:var(--font-display);font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);background:var(--accent-glow);padding:.3rem .75rem;border-radius:3px;display:inline-block;margin-bottom:1.25rem}
+    .article-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:1.5rem}
+    .article-meta{display:flex;align-items:center;gap:1.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border);margin-bottom:3rem}
+    .author-name{font-family:var(--font-display);font-size:.9rem;font-weight:700}.article-meta-date,.article-meta-read{font-size:.85rem;color:var(--text-secondary)}.meta-divider{color:var(--border)}
+    .article-body{font-size:1.05rem;font-weight:300;line-height:1.85;color:var(--text-secondary)}.article-body p{margin-bottom:1.75rem}
+    .article-body h2{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--text-primary);margin:3rem 0 1.25rem;letter-spacing:-.01em}
+    .article-body strong{color:var(--text-primary);font-weight:600}
+    .article-body blockquote{border-left:3px solid var(--accent);padding:1rem 1.5rem;margin:2rem 0;background:var(--bg-card);border-radius:0 8px 8px 0;font-size:1.1rem;color:var(--text-primary)}
+    .article-body a{color:var(--accent);border-bottom:1px solid rgba(232,145,12,0.3);transition:border-color .3s ease}.article-body a:hover{border-color:var(--accent)}
+    .related-posts{margin-top:4rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+    .related-posts h3{font-family:var(--font-display);font-size:1rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:1.5rem}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .related-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;display:flex;flex-direction:column;gap:.5rem;transition:all .3s ease;text-decoration:none}
+    .related-card:hover{border-color:rgba(232,145,12,0.3);transform:translateY(-2px)}
+    .related-label{font-family:var(--font-display);font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+    .related-title{font-family:var(--font-display);font-size:.85rem;font-weight:700;color:var(--text-primary);line-height:1.4}
+    .faq-section{margin-top:3rem}
+    .faq-section h3{font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:var(--text-primary);margin-bottom:1.5rem;letter-spacing:-.01em}
+    .faq-item{padding:1.25rem 0;border-bottom:1px solid var(--border)}.faq-item:last-child{border-bottom:none}
+    .faq-q{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--text-primary);margin-bottom:.5rem}
+    .faq-a{font-size:.9rem;font-weight:300;color:var(--text-secondary);line-height:1.7}
+    .faq-a a{color:var(--accent);border-bottom:1px solid rgba(232,145,12,0.3)}.faq-a a:hover{border-color:var(--accent)}
+    .newsletter-section{margin-top:3rem;padding:2.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-align:center}
+    .newsletter-section h3{font-family:var(--font-display);font-size:1.3rem;font-weight:800;margin-bottom:.5rem}
+    .newsletter-section>p{font-size:.95rem;color:var(--text-secondary);margin-bottom:1.5rem}
+    .nl-disclaimer{font-size:.7rem;color:#555;margin-top:.85rem;line-height:1.5}
+    .formkit-powered-by-convertkit-container{display:none!important}
+    .formkit-form[data-uid="31cba85161"]{max-width:440px!important;margin:0 auto!important}
+    .formkit-form[data-uid="31cba85161"] .seva-fields{display:flex!important;flex-direction:row!important;gap:.75rem!important;flex-wrap:nowrap!important}
+    .formkit-form[data-uid="31cba85161"] .formkit-field{flex:1 1 auto!important;margin:0!important}
+    .formkit-form[data-uid="31cba85161"] .formkit-submit{flex:0 0 auto!important;margin:0!important;width:auto!important;height:50px!important;padding:0 1.25rem!important;background:var(--accent)!important;color:#000!important;font-family:var(--font-display)!important;font-size:.72rem!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;border-radius:6px!important;white-space:nowrap!important;border:none!important}
+    .formkit-form[data-uid="31cba85161"] .formkit-submit:hover{background:var(--accent-hover)!important}
+    .formkit-form[data-uid="31cba85161"] .formkit-submit>span{padding:0!important}
+    .formkit-form[data-uid="31cba85161"] .formkit-input{height:50px!important;padding:0 1.25rem!important;background:#161616!important;border:1px solid rgba(232,145,12,0.4)!important;border-radius:6px!important;color:var(--text-primary)!important;font-family:var(--font-body)!important;font-size:.95rem!important}
+    .formkit-form[data-uid="31cba85161"] .formkit-input::placeholder{color:var(--text-secondary)!important;opacity:.6!important}
+    .formkit-form[data-uid="31cba85161"] .formkit-input:focus{border-color:var(--accent)!important;outline:none!important;box-shadow:0 0 0 3px rgba(232,145,12,0.15)!important}
+    @media(max-width:560px){.formkit-form[data-uid="31cba85161"] .seva-fields{flex-direction:column!important}.formkit-form[data-uid="31cba85161"] .formkit-submit{width:100%!important}}
+    .article-cta{margin-top:4rem;padding:2.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-align:center}
+    .article-cta h3{font-family:var(--font-display);font-size:1.3rem;font-weight:800;margin-bottom:.75rem}
+    .article-cta p{font-size:.95rem;color:var(--text-secondary);margin-bottom:1.5rem}
+    .btn-primary{font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1rem 2.2rem;background:var(--accent);color:#000;border-radius:4px;display:inline-block;transition:all .3s ease}.btn-primary:hover{background:var(--accent-hover)}
+    footer{padding:3rem 2rem;border-top:1px solid var(--border)}.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}.footer-copy{font-size:.85rem;color:var(--text-secondary);font-weight:300}.footer-links{display:flex;gap:2rem}.footer-links a{font-size:.85rem;color:var(--text-secondary);font-weight:400;transition:color .3s ease}.footer-links a:hover{color:var(--text-primary)}
+    @media(max-width:900px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:rgba(10,10,10,.95);backdrop-filter:blur(20px);padding:2rem;gap:1.5rem;border-bottom:1px solid var(--border)}.nav-links.open{display:flex}.nav-toggle{display:flex}.footer-inner{flex-direction:column;gap:1rem;text-align:center}.related-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo-link"><img src="/images/NEIL-JACOBS-LOGO-white.png" alt="Neil Jacobs logo" class="nav-logo"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#speaking">Speaking</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </nav>
+
+  <article class="article-wrap">
+    <a href="/blog" class="article-back">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8H3M3 8l5-5M3 8l5 5"/></svg>
+      Back to Blog
+    </a>
+
+    <div class="article-cover">
+      <img src="/blog/images/why-i-built-proof-of-conference.webp" alt="Bitcoin conference directory on a laptop screen with orange ambient lighting">
+    </div>
+
+    <span class="article-category">Bitcoin</span>
+    <h1 class="article-title">Why I Built Proof of Conference</h1>
+
+    <div class="article-meta">
+      <div class="article-meta-author"><span class="author-name">Neil Jacobs</span></div>
+      <span class="meta-divider">-</span>
+      <span class="article-meta-date">April 20, 2026</span>
+      <span class="meta-divider">-</span>
+      <span class="article-meta-read">4 min read</span>
+    </div>
+
+    <div class="article-body">
+
+      <p>I have been going to Bitcoin conferences for years. Speaking at them. Meeting people at them. Watching what they do for brands, relationships, and reputations in this community.</p>
+
+      <p>At some point I started getting the same question from people in my network: how do you find out about all these Bitcoin conferences? Which ones are worth going to? Are there events outside the US?</p>
+
+      <p>I did not have a clean answer. Because there was no clean answer. There was no single place where you could find every Bitcoin conference worldwide, filter by location or date, and actually get useful information without wading through clutter.</p>
+
+      <p>So I built one.</p>
+
+      <h2>The Problem Was Simple</h2>
+
+      <p>Finding Bitcoin conferences should not be hard. But it was.</p>
+
+      <p>The information existed, but it was scattered. Forum posts. Twitter threads. Event websites that were outdated. Lists that mixed Bitcoin conferences with altcoin events. No central directory. No clean search. No way to quickly answer the question: where are Bitcoin people gathering this year?</p>
+
+      <p>I wanted something that solved the problem completely. Every Bitcoin conference worldwide. Easily searchable. Not cluttered. No noise. Just the information you need to decide whether to go.</p>
+
+      <blockquote>If the resource you need does not exist, build it. That is the Bitcoin way.</blockquote>
+
+      <h2>What Proof of Conference Is</h2>
+
+      <p><a href="https://proofofconference.com" target="_blank">Proof of Conference</a> is a Bitcoin conference directory. It tracks events across dozens of countries, updated regularly, with clean search and filtering so you can find what is relevant to you fast.</p>
+
+      <p>It covers the well-known events — Bitcoin Conference, BTC Prague, Pacific Bitcoin — and the ones that most people outside the community have never heard of. Regional events in Latin America, Europe, Asia, the Middle East. Smaller focused gatherings that do not have big marketing budgets but have outsized value for the people who show up.</p>
+
+      <p>Many of the listings include discount codes so you can save on registration. For a number of the major conferences, promo code <strong>FOMO</strong> gets you a discount on your ticket. The site is Bitcoin-only. No altcoin conferences. No crypto events. Just Bitcoin.</p>
+
+      <h2>Why Bitcoin Conferences Matter</h2>
+
+      <p>I have written about this at length in <a href="/blog/bitcoin-conferences-best-marketing-investment">Bitcoin Conferences: The Best Marketing ROI</a>, but the short version is this: the Bitcoin community is built on trust, and trust is built in person.</p>
+
+      <p>The relationships that have mattered most to me in this space came from showing up at the same events year after year. Those connections led to speaking invitations, business opportunities, and friendships that would never have happened online. If you want to understand how to make the most of those opportunities when you get there, I also covered that in <a href="/blog/how-to-speak-at-bitcoin-conferences">How to Get a Speaking Slot at a Bitcoin Conference</a>.</p>
+
+      <p>The problem was never that conferences were not worth attending. The problem was that people could not find them. That is what Proof of Conference fixes.</p>
+
+      <h2>Where It Is Now</h2>
+
+      <p>The directory now tracks Bitcoin conferences across more than 24 countries. Tens of thousands of people have used it to find events. The site gets visitors from every continent.</p>
+
+      <p>I update it regularly as new events are announced and existing ones confirm dates. If you know of a Bitcoin conference that should be listed and is not, reach out.</p>
+
+      <p>If you are trying to figure out where Bitcoin people will be gathering in the next 12 months, <a href="https://proofofconference.com" target="_blank">proofofconference.com</a> is the place to start.</p>
+
+    </div>
+
+    <div class="related-posts">
+      <h3>Related Posts</h3>
+      <div class="related-grid">
+        <a href="/blog/bitcoin-conferences-best-marketing-investment" class="related-card">
+          <span class="related-label">Bitcoin Marketing</span>
+          <span class="related-title">Bitcoin Conferences: The Best Marketing ROI</span>
+        </a>
+        <a href="/blog/how-to-speak-at-bitcoin-conferences" class="related-card">
+          <span class="related-label">Bitcoin Marketing</span>
+          <span class="related-title">How to Get a Speaking Slot at a Bitcoin Conference</span>
+        </a>
+        <a href="/blog/how-to-build-a-bitcoin-audience" class="related-card">
+          <span class="related-label">Bitcoin Marketing</span>
+          <span class="related-title">How to Build a Bitcoin Audience From Zero</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <h4 class="faq-q">What is Proof of Conference?</h4>
+        <p class="faq-a">Proof of Conference is a Bitcoin conference directory founded by Neil Jacobs. It lists Bitcoin conferences worldwide, is easily searchable, and offers discount codes for many events. Visit <a href="https://proofofconference.com" target="_blank">proofofconference.com</a>.</p>
+      </div>
+      <div class="faq-item">
+        <h4 class="faq-q">Who founded Proof of Conference?</h4>
+        <p class="faq-a">Proof of Conference was founded by Neil Jacobs, a Bitcoin brand and marketing strategist based in the United States.</p>
+      </div>
+      <div class="faq-item">
+        <h4 class="faq-q">How do I find Bitcoin conferences worldwide?</h4>
+        <p class="faq-a">Proof of Conference at <a href="https://proofofconference.com" target="_blank">proofofconference.com</a> is a searchable directory of Bitcoin conferences happening around the world. It covers events across dozens of countries and includes discount codes for many conferences.</p>
+      </div>
+    </div>
+
+    <div class="newsletter-section">
+      <h3>Bitcoin insights, straight to your inbox.</h3>
+      <p>Bitcoin insights, conference picks, and more.</p>
+      <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9263305/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9263305" data-uid="31cba85161" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! You are now subscribed.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Your email address" required="" type="email"></div><button data-element="submit" class="formkit-submit formkit-submit"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Get the Playbook</span></button></div></div></form>
+      <p class="nl-disclaimer">By subscribing, you agree to receive emails including insights, recommendations, and occasional promotions. No spam, no third-party sharing. Unsubscribe anytime.</p>
+    </div>
+
+    <div class="article-cta">
+      <h3>Want to work together?</h3>
+      <p>I help Bitcoin brands and founders build their presence. Let's talk.</p>
+      <a href="/#contact" class="btn-primary">Get in Touch</a>
+    </div>
+
+  </article>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Neil Jacobs. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://x.com/NeilJacobs" target="_blank">X</a>
+        <a href="https://www.linkedin.com/in/neiljacobs/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/therealneiljacobs" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  </script>
+</body>
+</html>
